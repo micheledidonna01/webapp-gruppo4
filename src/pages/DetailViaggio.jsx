@@ -1,10 +1,11 @@
 import viaggi from "../data/viaggi";
 import { useParams } from "react-router-dom";
 import clienti from "../data/clienti";
+import CustomerCard from "../components/CustomerCard";
 
-const DetailViaggio = ()=>{
+const DetailViaggio = () => {
 
-    const {id} = useParams();
+    const { id } = useParams();
     let viaggio = viaggi[id];
     const clientiViaggio = clienti.filter(cliente => cliente.id_viaggio === parseInt(id));
     return <>
@@ -22,8 +23,10 @@ const DetailViaggio = ()=>{
 
         <h3>Viaggiatori:</h3>
         <ul className="partecipanti">
-            {clientiViaggio?.map((cliente) => <li key={cliente.id}>{cliente.nome}</li> )}
+            {clientiViaggio?.map((cliente) => <CustomerCard key={cliente.id} data={cliente} id={cliente.id} />)}
         </ul>
+
+
     </>
 }
 

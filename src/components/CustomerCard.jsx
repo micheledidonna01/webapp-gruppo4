@@ -1,11 +1,19 @@
-function CustomerCard({ id, nome, cognome, email, cellulare, codice_fiscale, data_nascita }) {
+import { Link } from "react-router-dom";
+
+function CustomerCard({data}) {
+    const { id, nome, cognome} = data;
+
     return (
-        <div>
-            <div>
-                <span>{nome}</span>
-                <span>{cognome}</span>
-            </div>
-        </div>
+        <>
+            <Link to={`clienti/${id}`} id={id} >
+                <div>
+                    <p>name: {nome}</p>
+                    <p>cognome: {cognome}</p>
+                    
+                </div>
+            </Link>
+        <hr />
+        </>
     )
 }
 

@@ -1,4 +1,5 @@
-function TravelCard({ id, località, data_inizio, data_finale, itinerario }) {
+function TravelCard({ data }) {
+    const {id, località, data_inizio, data_finale, itinerario} = data;
     return (
         <div>
             <div>

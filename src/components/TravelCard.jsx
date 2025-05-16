@@ -1,4 +1,4 @@
-function TravelCard({ id, località, data_inizio, data_finale }) {
+function TravelCard({ id, località, data_inizio, data_finale, itinerario }) {
     return (
         <div>
             <div id={id}>
@@ -6,6 +6,9 @@ function TravelCard({ id, località, data_inizio, data_finale }) {
             </div>
             <div>
                 <span>{data_inizio} - {data_finale}</span>
+            </div>
+            <div>
+                <h4>{itinerario}</h4>
             </div>
         </div>
     )

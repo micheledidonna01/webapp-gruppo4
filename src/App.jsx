@@ -3,6 +3,7 @@ import DefaultLayout from "./layout/DefaultLayout"
 import Viaggi from "./pages/Viaggi"
 import DetailViaggio from "./pages/DetailViaggio"
 import ListClienti from "./pages/ListClienti"
+import Clienti from "./pages/Clienti"
 
 function App() {
 
@@ -14,7 +15,10 @@ function App() {
             <Route path="/">
               <Route index element={<Viaggi />} />
               <Route path=":id" element={<DetailViaggio />} />
-              <Route path=":id/clienti" element={<ListClienti/>} />
+              <Route path=":id/clienti/:id" element={<ListClienti />} />   
+            </Route>
+            <Route path="/clienti">
+              <Route index element={<Clienti />} />         
             </Route>
           </Route>
         </Routes>

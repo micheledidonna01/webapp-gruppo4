@@ -1,7 +1,7 @@
 function TravelCard({ id, località, data_inizio, data_finale, itinerario }) {
     return (
         <div>
-            <div id={id}>
+            <div>
                 <h3>{località}</h3>
             </div>
             <div>
@@ -9,6 +9,9 @@ function TravelCard({ id, località, data_inizio, data_finale, itinerario }) {
             </div>
             <div>
                 <h4>{itinerario}</h4>
+            </div>
+            <div>
+                <button onClick={`/${id}`}>Dettagli</button>
             </div>
         </div>
     )

@@ -1,5 +1,13 @@
+import { Outlet } from "react-router-dom";
+
+
 const DefaultLayout = () => {
-    return <></>
+    return (<>
+        <header>Booviaggi</header>
+        <main>
+            <Outlet />
+        </main>
+    </>)
 }
 
 export default DefaultLayout;

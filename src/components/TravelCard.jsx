@@ -1,3 +1,6 @@
+import { Link } from "react-router-dom";
+
+
 function TravelCard({ data }) {
     const {id, località, data_inizio, data_finale, itinerario} = data;
     return (
@@ -12,7 +15,7 @@ function TravelCard({ data }) {
                 <h4>{itinerario}</h4>
             </div>
             <div>
-                <button onClick={`/${id}`}>Dettagli</button>
+                <Link to={`/${id}`}>Info</Link>
             </div>
         </div>
     )

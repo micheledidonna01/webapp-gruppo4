@@ -1,5 +1,9 @@
+import { Outlet } from "react-router-dom";
+
 const DefaultLayout = () => {
-    return <></>
+    return <>
+        <Outlet />
+    </>
 }
 
 export default DefaultLayout;

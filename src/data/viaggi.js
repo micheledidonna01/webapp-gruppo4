@@ -1,4 +1,4 @@
-[
+const viaggi = [
     {
         "id": 1,
         "localita": "Roma",
@@ -63,3 +63,5 @@
         "itinerario": "Statua della Libertà, Times Square, Central Park"
     }
 ]
+
+export default viaggi;

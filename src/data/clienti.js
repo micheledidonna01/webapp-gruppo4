@@ -1,4 +1,4 @@
-[
+const clienti =[
   {
     "id": 1,
     "nome": "Piergiorgio",
@@ -700,3 +700,5 @@
     "id_viaggio": 4
   }
 ]
+
+export default clienti;

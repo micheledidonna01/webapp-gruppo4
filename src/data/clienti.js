@@ -1,4 +1,4 @@
-const clienti =[
+const clienti = [
   {
     "id": 1,
     "nome": "Piergiorgio",
@@ -510,16 +510,6 @@ const clienti =[
     "id_viaggio": 6
   },
   {
-    "id": 52,
-    "nome": "Alessia",
-    "cognome": "Guinizzelli",
-    "email": "alessia.guinizzelli@example.com",
-    "cellulare": "+39 422 68547566",
-    "codice_fiscale": "ULYATV18H34X349W",
-    "data_nascita": "1957-03-13",
-    "id_viaggio": 4
-  },
-  {
     "id": 53,
     "nome": "Franco",
     "cognome": "Tamburini",
@@ -550,16 +540,6 @@ const clienti =[
     "id_viaggio": 3
   },
   {
-    "id": 56,
-    "nome": "Pierpaolo",
-    "cognome": "Amaldi",
-    "email": "pierpaolo.amaldi@example.com",
-    "cellulare": "+39 579 59 75 3388",
-    "codice_fiscale": "BMWNDL04N39V094Y",
-    "data_nascita": "1983-12-21",
-    "id_viaggio": 4
-  },
-  {
     "id": 57,
     "nome": "Giampiero",
     "cognome": "Salieri",
@@ -568,16 +548,6 @@ const clienti =[
     "codice_fiscale": "BPCXOK37V71G004H",
     "data_nascita": "1972-08-26",
     "id_viaggio": 1
-  },
-  {
-    "id": 58,
-    "nome": "Nanni",
-    "cognome": "Petrocelli",
-    "email": "nanni.petrocelli@example.com",
-    "cellulare": "+39 23 5962076",
-    "codice_fiscale": "YISILH00S13L625V",
-    "data_nascita": "1950-02-27",
-    "id_viaggio": 4
   },
   {
     "id": 59,
@@ -630,26 +600,6 @@ const clienti =[
     "id_viaggio": 2
   },
   {
-    "id": 64,
-    "nome": "Laura",
-    "cognome": "Piccio",
-    "email": "laura.piccio@example.com",
-    "cellulare": "+39 4906 3924530",
-    "codice_fiscale": "IIOVGT20U21C374L",
-    "data_nascita": "1994-05-02",
-    "id_viaggio": 4
-  },
-  {
-    "id": 65,
-    "nome": "Massimo",
-    "cognome": "Fanucci",
-    "email": "massimo.fanucci@example.com",
-    "cellulare": "+39 409 44 45 7949",
-    "codice_fiscale": "FONKTI16M88O360C",
-    "data_nascita": "2005-01-19",
-    "id_viaggio": 4
-  },
-  {
     "id": 66,
     "nome": "Gabriella",
     "cognome": "Carli",
@@ -688,16 +638,6 @@ const clienti =[
     "codice_fiscale": "JKQIXR56I24T110B",
     "data_nascita": "1988-04-21",
     "id_viaggio": 3
-  },
-  {
-    "id": 70,
-    "nome": "Amleto",
-    "cognome": "Torlonia",
-    "email": "amleto.torlonia@example.com",
-    "cellulare": "+39 1956 3931474",
-    "codice_fiscale": "YZPTXR30S78G732H",
-    "data_nascita": "1949-08-16",
-    "id_viaggio": 4
   }
 ]
 

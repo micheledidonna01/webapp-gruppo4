@@ -1,19 +1,31 @@
-import { Link } from "react-router-dom";
 
-function CustomerCard({data}) {
-    const { id, nome, cognome} = data;
+import { useState } from "react";
+
+
+function CustomerCard({ data }) {
+
+    const { nome, cognome, email, cellulare, codice_fiscale, data_nascita } = data;
+    const [isShow, setIsShow] = useState(false);
+
+    function setShow() {
+        setIsShow(!isShow);
+    }
 
     return (
-        <>
-            <Link to={`clienti/${id}`} id={id} >
-                <div>
-                    <p>name: {nome}</p>
-                    <p>cognome: {cognome}</p>
-                    
-                </div>
-            </Link>
-        <hr />
-        </>
+        <div>
+            <div>
+                <span>{nome} {cognome}</span>
+                <button onClick={setShow}>Dettagli</button>
+            </div>
+
+            {isShow && <ul>
+                <li>Data di nascita: {data_nascita}</li>
+                <li>Cellulare: {cellulare}</li>
+                <li>Email: {email}</li>
+                <li>Codice Fiscale: {codice_fiscale}</li>
+            </ul>}
+
+        </div>
     )
 }
 

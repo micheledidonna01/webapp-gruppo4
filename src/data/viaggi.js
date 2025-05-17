@@ -8,7 +8,8 @@ const viaggi = [
             { "id": 1, "nome": "Luca", "cognome": "Bianchi" },
             { "id": 2, "nome": "Maria", "cognome": "Rossi" }
         ],
-        "itinerario": "Colosseo, Vaticano, Fontana di Trevi"
+        "itinerario": "Colosseo, Vaticano, Fontana di Trevi",
+        "posti_max": 15
     },
     {
         "id": 2,
@@ -18,7 +19,8 @@ const viaggi = [
         "accompagnatori": [
             { "id": 3, "nome": "Giulia", "cognome": "Verdi" }
         ],
-        "itinerario": "Torre Eiffel, Louvre, Montmartre"
+        "itinerario": "Torre Eiffel, Louvre, Montmartre",
+        "posti_max": 15
     },
     {
         "id": 3,
@@ -29,7 +31,8 @@ const viaggi = [
             { "id": 4, "nome": "Marco", "cognome": "Ferrari" },
             { "id": 5, "nome": "Elena", "cognome": "Gallo" }
         ],
-        "itinerario": "Sagrada Familia, Parco Güell, Rambla"
+        "itinerario": "Sagrada Familia, Parco Güell, Rambla",
+        "posti_max": 15
     },
     {
         "id": 4,
@@ -39,7 +42,8 @@ const viaggi = [
         "accompagnatori": [
             { "id": 6, "nome": "Alessandro", "cognome": "Conti" }
         ],
-        "itinerario": "Big Ben, Tower Bridge, British Museum"
+        "itinerario": "Big Ben, Tower Bridge, British Museum",
+        "posti_max": 15
     },
     {
         "id": 5,
@@ -50,7 +54,8 @@ const viaggi = [
             { "id": 7, "nome": "Chiara", "cognome": "Moretti" },
             { "id": 8, "nome": "Fabio", "cognome": "Russo" }
         ],
-        "itinerario": "Castello di Praga, Ponte Carlo, Orologio Astronomico"
+        "itinerario": "Castello di Praga, Ponte Carlo, Orologio Astronomico",
+        "posti_max": 15
     },
     {
         "id": 6,
@@ -60,7 +65,8 @@ const viaggi = [
         "accompagnatori": [
             { "id": 9, "nome": "Simona", "cognome": "De Luca" }
         ],
-        "itinerario": "Statua della Libertà, Times Square, Central Park"
+        "itinerario": "Statua della Libertà, Times Square, Central Park",
+        "posti_max": 15
     }
 ]
 

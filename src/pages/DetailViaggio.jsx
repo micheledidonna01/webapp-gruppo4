@@ -17,6 +17,7 @@ const DetailViaggio = () => {
 
     if (!viaggio) return <p>Viaggio non trovato.</p>;
 
+
     return <>
         <div>
             <h3>{viaggio.localita}</h3>
@@ -36,6 +37,7 @@ const DetailViaggio = () => {
         />
 
         <ul className="partecipanti">
+
             {clientiFiltrati.map((cliente) => (
                 <li key={cliente.id}><CustomerCard data={cliente} /></li>
             ))}
@@ -43,5 +45,6 @@ const DetailViaggio = () => {
 
     </>;
 };
+
 
 export default DetailViaggio;

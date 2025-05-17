@@ -7,6 +7,7 @@ function TravelCard({ data }) {
 
         <article>
             <div>Immagine</div>
+
             <div>
                 <h3>{localita}</h3>
                 <span>Dal <strong>{data_inizio}</strong> al <strong>{data_fine}</strong></span>
@@ -15,7 +16,6 @@ function TravelCard({ data }) {
                 <Link to={`/${id}`}>Info</Link>
             </div>
         </article>
-
     )
 }
 

@@ -7,8 +7,10 @@ const Viaggi = () => {
         v.localita?.toLowerCase().includes(search.toLowerCase())
     );
     return <>
-        <div>
+        <section className="travels-container">
+
             <h1>Viaggi:</h1>
+
             <div>
                 <label htmlFor="search">Cerca viaggi:</label>
                 <input
@@ -22,8 +24,10 @@ const Viaggi = () => {
                 {viaggiFiltrati.map(viaggio => (
                     <TravelCard key={viaggio.id} data={viaggio} />
                 ))}
+
             </div>
-        </div>
+
+        </section>
     </>
 }
 

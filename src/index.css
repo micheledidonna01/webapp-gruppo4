@@ -11,24 +11,30 @@ img {
 }
 
 header {
+  background-color: #edf2f4;
   font-family: "Russo One", sans-serif;
   text-align: center;
   font-size: 30px;
   padding: 10px;
-  color: rgb(132, 128, 128);
+  color: #2b2d42;
   margin-bottom: 15px;
 }
 
 header span {
-  color: red;
+  color: #ef233c;
 }
 
 body {
   font-family: "Roboto", sans-serif;
+  background-color: #8d99ae;
 }
 
 h1 {
   margin-bottom: 15px;
+}
+
+input {
+  padding: 5px;
 }
 
 .search-travel {
@@ -44,12 +50,43 @@ h1 {
 
 .card-container {
   display: grid;
-  gap: 10px;
+  gap: 20px;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   max-width: 100%;
 }
 
+article {
+  padding: 5px;
+  background-color: #edf2f4;
+  border-radius: 5px;
+  box-shadow: 3px 3px 5px 0px #2b2d42;
+}
 
+article div {
+  margin-bottom: 20px;
+}
+
+.travel-card h3 {
+  margin-bottom: 10px;
+}
+
+.travel-card span {
+  display: inline-block;
+  margin-bottom: 10px;
+}
+
+.travel-card p {
+  margin-bottom: 20px;
+}
+
+.travel-card a {
+  text-decoration: none;
+  cursor: pointer;
+  padding: 10px;
+  background-color: #ef233c;
+  border-radius: 5px;
+  color: white;
+}
 
 @media screen and (max-width: 768px) {
 

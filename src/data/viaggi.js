@@ -9,7 +9,8 @@ const viaggi = [
             { "id": 2, "nome": "Maria", "cognome": "Rossi" }
         ],
         "itinerario": "Colosseo, Vaticano, Fontana di Trevi",
-        "posti_max": 15
+        "posti_max": 15,
+        "image": 'roma.jpg'
     },
     {
         "id": 2,
@@ -20,7 +21,8 @@ const viaggi = [
             { "id": 3, "nome": "Giulia", "cognome": "Verdi" }
         ],
         "itinerario": "Torre Eiffel, Louvre, Montmartre",
-        "posti_max": 15
+        "posti_max": 15,
+        "image": 'parigi.jpg'
     },
     {
         "id": 3,
@@ -32,7 +34,8 @@ const viaggi = [
             { "id": 5, "nome": "Elena", "cognome": "Gallo" }
         ],
         "itinerario": "Sagrada Familia, Parco Güell, Rambla",
-        "posti_max": 15
+        "posti_max": 15,
+        "image": 'barcellona.jpg'
     },
     {
         "id": 4,
@@ -43,7 +46,8 @@ const viaggi = [
             { "id": 6, "nome": "Alessandro", "cognome": "Conti" }
         ],
         "itinerario": "Big Ben, Tower Bridge, British Museum",
-        "posti_max": 15
+        "posti_max": 15,
+        "image": 'londra.jpg'
     },
     {
         "id": 5,
@@ -55,7 +59,8 @@ const viaggi = [
             { "id": 8, "nome": "Fabio", "cognome": "Russo" }
         ],
         "itinerario": "Castello di Praga, Ponte Carlo, Orologio Astronomico",
-        "posti_max": 15
+        "posti_max": 15,
+        "image": 'praga'
     },
     {
         "id": 6,
@@ -66,7 +71,8 @@ const viaggi = [
             { "id": 9, "nome": "Simona", "cognome": "De Luca" }
         ],
         "itinerario": "Statua della Libertà, Times Square, Central Park",
-        "posti_max": 15
+        "posti_max": 15,
+        "image": 'new-york.jpg'
     }
 ]
 

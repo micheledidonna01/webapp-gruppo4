@@ -11,7 +11,7 @@ const Viaggi = () => {
 
             <h1>Viaggi:</h1>
 
-            <div>
+            <div className="search-travel">
                 <label htmlFor="search">Cerca viaggi:</label>
                 <input
                     type="text"
@@ -20,7 +20,7 @@ const Viaggi = () => {
                     onChange={e => setSearch(e.target.value)}
                 />
             </div>
-            <div>
+            <div className="card-container">
                 {viaggiFiltrati.map(viaggio => (
                     <TravelCard key={viaggio.id} data={viaggio} />
                 ))}

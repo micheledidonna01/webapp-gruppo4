@@ -5,26 +5,35 @@
 
 }
 
-.search-box {
-  margin-left: 15%;
+img {
+  display: block;
+  width: 100%;
+}
+
+h1 {
+  margin-bottom: 15px;
+}
+
+.search-travel {
+  margin-bottom: 25px;
 }
 
 .travels-container {
-  display: flex;
-  flex-direction: column;
-  gap: 30px;
-  align-items: center;
+
+  max-width: 1200px;
+  margin: 0 auto;
 
 }
 
 .card-container {
 
   display: flex;
-  flex-direction: column;
-  gap: 30px;
-  max-width: 1200px;
-  width: 100%;
+  flex-wrap: wrap;
+  gap: 10px;
+}
 
+article {
+  max-width: calc((100% - 20px)/ 3);
 }
 
 .travels {
@@ -37,6 +46,11 @@
 
 
 }
+
+/* img {
+  width: 300px;
+  height: 200px;
+} */
 
 .travel-card {
   border: 2px solid rgba(128, 128, 128, 0.5);

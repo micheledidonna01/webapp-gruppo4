@@ -1,28 +1,23 @@
 import viaggi from "../data/viaggi";
 import { useParams } from "react-router-dom";
 import clienti from "../data/clienti";
+import CustomerCard from "../components/CustomerCard";
 
-const DetailViaggio = ()=>{
+const DetailViaggio = () => {
 
-    const {id} = useParams();
-    let viaggio = viaggi[id];
-    const clientiViaggio = clienti.filter(cliente => cliente.id_viaggio === parseInt(id));
+    const { id } = useParams();
+    const idNum = parseInt(id);
+    const viaggio = viaggi.find(v => v.id === idNum);
+    const clientiViaggio = clienti.filter(cliente => cliente.id_viaggio === idNum);
     return <>
         <div>
-            <div>
-                <h3>{viaggio.località}</h3>
-            </div>
-            <div>
-                <span>{viaggio.data_inizio} - {viaggio.data_finale}</span>
-            </div>
-            <div>
-                <h4>{viaggio.itinerario}</h4>
-            </div>
+            <h3>{viaggio.localita}</h3>
+            <span>Dal <strong>{viaggio.data_inizio}</strong> al <strong>{viaggio.data_fine}</strong></span>
         </div>
 
         <h3>Viaggiatori:</h3>
         <ul className="partecipanti">
-            {clientiViaggio?.map((cliente) => <li key={cliente.id}>{cliente.nome}</li> )}
+            {clientiViaggio?.map((cliente) => <li key={cliente.id}> <CustomerCard data={cliente} /></li>)}
         </ul>
     </>
 }

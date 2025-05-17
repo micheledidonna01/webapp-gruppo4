@@ -8,7 +8,7 @@ function TravelCard({ data }) {
         <article>
             <div>Immagine</div>
 
-            <div>
+            <div className="travel-card">
                 <h3>{localita}</h3>
                 <span>Dal <strong>{data_inizio}</strong> al <strong>{data_fine}</strong></span>
                 <p>Cosa visiterai: <em>{itinerario}</em></p>

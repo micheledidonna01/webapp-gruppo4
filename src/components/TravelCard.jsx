@@ -2,11 +2,13 @@ import { Link } from "react-router-dom";
 
 
 function TravelCard({ data }) {
-    const { id, localita, data_inizio, data_fine, itinerario } = data;
+    const { id, localita, data_inizio, data_fine, itinerario, image } = data;
     return (
 
         <article>
-            <div>Immagine</div>
+            <div>
+                <img src={`/img/${image}`} alt={localita} />
+            </div>
 
             <div className="travel-card">
                 <h3>{localita}</h3>

@@ -2,9 +2,9 @@ import { Link } from "react-router-dom";
 
 
 function TravelCard({ data }) {
-    const {id, località, data_inizio, data_finale, itinerario} = data;
+    const { id, località, data_inizio, data_finale, itinerario } = data;
     return (
-        <div>
+        <div className="travel-card">
             <div>
                 <h3>{località}</h3>
             </div>

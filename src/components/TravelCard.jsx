@@ -2,22 +2,20 @@ import { Link } from "react-router-dom";
 
 
 function TravelCard({ data }) {
-    const {id, località, data_inizio, data_finale, itinerario} = data;
+    const { id, localita, data_inizio, data_fine, itinerario } = data;
     return (
-        <div>
+
+        <article>
+            <div>Immagine</div>
             <div>
-                <h3>{località}</h3>
-            </div>
-            <div>
-                <span>{data_inizio} - {data_finale}</span>
-            </div>
-            <div>
-                <h4>{itinerario}</h4>
-            </div>
-            <div>
+                <h3>{localita}</h3>
+                <span>Dal <strong>{data_inizio}</strong> al <strong>{data_fine}</strong></span>
+                <p>Cosa visiterai: <em>{itinerario}</em></p>
+
                 <Link to={`/${id}`}>Info</Link>
             </div>
-        </div>
+        </article>
+
     )
 }
 

@@ -3,7 +3,7 @@ import { Outlet } from "react-router-dom";
 
 const DefaultLayout = () => {
     return (<>
-        <header>Booviaggi</header>
+        <header><span>Boo</span>Road</header>
         <main>
             <Outlet />
         </main>

@@ -60,7 +60,7 @@ const viaggi = [
         ],
         "itinerario": "Castello di Praga, Ponte Carlo, Orologio Astronomico",
         "posti_max": 15,
-        "image": 'praga'
+        "image": 'praga.jpg'
     },
     {
         "id": 6,

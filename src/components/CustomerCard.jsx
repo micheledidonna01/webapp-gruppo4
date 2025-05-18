@@ -12,10 +12,10 @@ function CustomerCard({ data }) {
     }
 
     return (
-        <div>
-            <div>
+        <div className="customer-card">
+            <div className="customer-row">
                 <span>{nome} {cognome}</span>
-                <button onClick={setShow}>Dettagli</button>
+                <button className="customer-details-btn" onClick={setShow}>Dettagli</button>
             </div>
 
             {isShow && <ul>

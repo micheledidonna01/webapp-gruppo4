@@ -88,7 +88,7 @@ const DetailViaggio = () => {
                     onChange={(e) => setSearchTerm(e.target.value)}
                 />
             </div>
-            <p className={clientiViaggio.length >= viaggio.posti_max ? "text-red bg-red" : "text-green bg-green"}>
+            <p className={clientiViaggio.length >= viaggio.posti_max ? "text-red bg-red" : "text-green bg-green"} >
                 Partecipanti: {clientiViaggio.length} / {viaggio.posti_max}
             </p>
             <button onClick={showForm}>Aggiungi partecipante</button>

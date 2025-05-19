@@ -32,7 +32,7 @@ const DetailViaggio = () => {
         cellulare: "",
         codice_fiscale: "",
         data_nascita: "",
-        id_viaggio: id
+        id_viaggio: parseInt(id)
     });
     const handleChange = (e) => {
         e.preventDefault();

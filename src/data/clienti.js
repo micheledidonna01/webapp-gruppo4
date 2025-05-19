@@ -600,7 +600,7 @@ const clienti = [
     "id_viaggio": 2
   },
   {
-    "id": 66,
+    "id": 64,
     "nome": "Gabriella",
     "cognome": "Carli",
     "email": "gabriella.carli@example.com",
@@ -610,7 +610,7 @@ const clienti = [
     "id_viaggio": 5
   },
   {
-    "id": 67,
+    "id": 65,
     "nome": "Ricciotti",
     "cognome": "Roncalli",
     "email": "ricciotti.roncalli@example.com",
@@ -620,7 +620,7 @@ const clienti = [
     "id_viaggio": 5
   },
   {
-    "id": 68,
+    "id": 66,
     "nome": "Fulvio",
     "cognome": "Visconti",
     "email": "fulvio.visconti@example.com",
@@ -630,7 +630,7 @@ const clienti = [
     "id_viaggio": 1
   },
   {
-    "id": 69,
+    "id": 67,
     "nome": "Milena",
     "cognome": "Natta",
     "email": "milena.natta@example.com",

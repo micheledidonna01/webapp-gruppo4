@@ -51,20 +51,24 @@ const DetailViaggio = () => {
 
     function handleSubmit(e) {
         e.preventDefault();
-        const nuovoCliente = { ...newCustomer, id: clienti.length + 1 };
+        if (newCustomer.nome === "" || newCustomer.cognome === "") {
+            alert("Inserire almeno il nome e il cognome")
+            return
+        } else {
+            const nuovoCliente = { ...newCustomer, id: clienti.length + 1 };
+            setClientiViaggio(prev => [...prev, nuovoCliente]);
 
-        setClientiViaggio(prev => [...prev, nuovoCliente]);
-
-        setNewCustomer({
-            id: '',
-            nome: "",
-            cognome: "",
-            email: "",
-            cellulare: "",
-            codice_fiscale: "",
-            data_nascita: "",
-            id_viaggio: parseInt(id)
-        });
+            setNewCustomer({
+                id: '',
+                nome: "",
+                cognome: "",
+                email: "",
+                cellulare: "",
+                codice_fiscale: "",
+                data_nascita: "",
+                id_viaggio: parseInt(id)
+            });
+        }
     }
 
     return <div className="details-container">

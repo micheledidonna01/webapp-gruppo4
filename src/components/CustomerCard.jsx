@@ -14,17 +14,17 @@ function CustomerCard({ data }) {
         <>
             <div className="user-details">
                 <span>{nome} {cognome}</span>
-                <button className="btn-details" onClick={setShow}>Dettagli</button>
+                <button className="btn-details" onClick={setShow}>{isShow ? 'Chiudi' : 'Dettagli'}</button>
 
             </div>
 
             {isShow && <ul className="user-data">
-                <li>Data di nascita: {data_nascita}</li>
-                <li>Cellulare: {cellulare}</li>
-                <li>Email: {email}</li>
-                <li>Codice Fiscale: {codice_fiscale}</li>
+                <li><strong>Data di nascita:</strong> {data_nascita}</li>
+                <li><strong>Cellulare:</strong> {cellulare}</li>
+                <li><strong>Email:</strong> {email}</li>
+                <li><strong>Codice Fiscale:</strong> {codice_fiscale}</li>
             </ul>}
-            
+
         </>
     )
 }

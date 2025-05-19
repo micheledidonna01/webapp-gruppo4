@@ -4,6 +4,7 @@ import Viaggi from "./pages/Viaggi"
 import DetailViaggio from "./pages/DetailViaggio"
 import ListClienti from "./pages/ListClienti"
 import Clienti from "./pages/Clienti"
+import CreateViaggio from "./pages/CreateViaggio"
 
 function App() {
 
@@ -14,6 +15,7 @@ function App() {
           <Route element={<DefaultLayout />}>
             <Route path="/">
               <Route index element={<Viaggi />} />
+              <Route path="create" element={<CreateViaggio />} />
               <Route path=":id" element={<DetailViaggio />} />
               <Route path=":id/clienti/:id" element={<ListClienti />} />   
             </Route>

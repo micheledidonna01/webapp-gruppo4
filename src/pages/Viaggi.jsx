@@ -8,18 +8,20 @@ const Viaggi = () => {
     );
     return <>
         <section className="travels-container">
-
-            <h1>Viaggi:</h1>
-
             <div className="search-travel">
-                <label htmlFor="search">Cerca viaggi:</label>
-                <input
-                    type="text"
-                    id="search"
-                    value={search}
-                    onChange={e => setSearch(e.target.value)}
-                />
+                <h1>Viaggi:</h1>
+
+                <div>
+                    <label htmlFor="search">Cerca viaggi:</label>
+                    <input
+                        type="text"
+                        id="search"
+                        value={search}
+                        onChange={e => setSearch(e.target.value)}
+                    />
+                </div>
             </div>
+
             <div className="card-container">
                 {viaggiFiltrati.map(viaggio => (
                     <TravelCard key={viaggio.id} data={viaggio} />

@@ -80,6 +80,26 @@ const DetailViaggio = () => {
                         <label htmlFor="nome">Nome:</label>
                         <input type="text" name="nome" id="nome" value={newCustomer.nome} onChange={handleChange} />
                     </div>
+                    <div>
+                        <label htmlFor="cognome">Cognome:</label>
+                        <input type="text" name="cognome" id="cognome" value={newCustomer.cognome} onChange={handleChange} />
+                    </div>
+                    <div>
+                        <label htmlFor="email">Email:</label>
+                        <input type="text" name="email" id="email" value={newCustomer.email} onChange={handleChange} />
+                    </div>
+                    <div>
+                        <label htmlFor="cellulare">Cellulare:</label>
+                        <input type="text" name="cellulare" id="cellulare" value={newCustomer.cellulare} onChange={handleChange} />
+                    </div>
+                    <div>
+                        <label htmlFor="codice_fiscale">Codice Fiscale:</label>
+                        <input type="text" name="codice_fiscale" id="codice_fiscale" value={newCustomer.codice_fiscale} onChange={handleChange} />
+                    </div>
+                    <div>
+                        <label htmlFor="data_nascita">Data di nascita:</label>
+                        <input type="text" name="data_nascita" id="data_nascita" value={newCustomer.data_nascita} onChange={handleChange} />
+                    </div>
                 </form>
             </div>
         </div>

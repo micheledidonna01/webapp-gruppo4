@@ -1,25 +1,21 @@
 import accompagnatori from "../data/accompagnatori";
 import { useState } from "react";
+import viaggi from "../data/viaggi";
 const CreateViaggio = () => {
 
-    const newViaggio = {
+    const [newViaggio, setNewViaggio] = useState({
         id: '',
         localita: '',
         data_inizio: '',
         data_fine: '',
         accompagnatori: [],
         itinerario: '',
-        posti_max: '',
+        posti_max: 15,
         image: ''
-    };
-
-
+    });
 
     const [selectedOptions, setSelectedOptions] = useState([]);
-
     const accompagnatoriSelected = accompagnatori.filter(acc => selectedOptions.includes(acc.id.toString()));
-    console.log(accompagnatoriSelected);
-    console.log(selectedOptions);
 
     const handleChange = (e) => {
         const selected = Array.from(e.target.selectedOptions).map((opt) => opt.value);
@@ -31,13 +27,24 @@ const CreateViaggio = () => {
         }
     };
 
-
+    const submitHandler = (e) => {
+        e.preventDefault();
+        let { name, value } = e.target
+        console.log(e.target)
+        setNewViaggio((newViaggio) => ({
+            ...newViaggio,
+            id: viaggi.length + 1,
+            [name]: value
+        }))
+        console.log('Nuovo viaggio salvato!');
+        console.log(newViaggio);
+    }
 
 
 
     return <>
         <section>
-            <form action="">
+            <form action="" onSubmit={submitHandler}>
                 <div>
                     <label htmlFor="localita">Localita:</label>
                     <input type="text" name="localita" id="localita" />
@@ -51,12 +58,12 @@ const CreateViaggio = () => {
                     <input type="date" name="data_fine" id="data_fine" />
                 </div>
                 <div>
-                <select name="accompagnatori" id="accompagnatori" multiple value={selectedOptions} onChange={handleChange}>
-                    {accompagnatori.map((acc) => (<option key={acc.id} value={acc.id}>{acc.nome}</option>))}
-                </select>
-                <ul>
-                    {accompagnatoriSelected.map(acc => (<li key={acc.id}>{acc.nome} {acc.cognome}</li>))}
-                </ul>
+                    <select name="accompagnatori" id="accompagnatori" multiple value={selectedOptions} onChange={handleChange}>
+                        {accompagnatori.map((acc) => (<option key={acc.id} value={acc.id}>{acc.nome}</option>))}
+                    </select>
+                    <ul>
+                        {accompagnatoriSelected.map(acc => (<li key={acc.id}>{acc.nome} {acc.cognome}</li>))}
+                    </ul>
                 </div>
                 <div>
                     <label htmlFor="itinerario">Itinerario:</label>

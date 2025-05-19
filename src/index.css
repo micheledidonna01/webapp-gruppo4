@@ -18,6 +18,10 @@ ul {
   list-style: none;
 }
 
+a {
+  text-decoration: none;
+}
+
 header {
   background-color: #edf2f4;
   font-family: "Russo One", sans-serif;
@@ -57,6 +61,11 @@ input {
 
 .bg-red {
   background-color: #ee7a76;
+}
+
+.d-flex {
+  display: flex;
+  gap: 5px;
 }
 
 /* Header  */

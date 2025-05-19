@@ -47,18 +47,18 @@ const CreateViaggio = () => {
             <form action="" onSubmit={submitHandler}>
                 <div>
                     <label htmlFor="localita">Localita:</label>
-                    <input type="text" name="localita" id="localita" />
+                    <input type="text" name="localita" id="localita" value={newViaggio.localita} />
                 </div>
                 <div>
                     <label htmlFor="data_inizio">Data inizio:</label>
-                    <input type="date" name="data_inizio" id="data_inizio" />
+                    <input type="date" name="data_inizio" id="data_inizio" value={newViaggio.data_inizio} />
                 </div>
                 <div>
                     <label htmlFor="data_fine">Data fine:</label>
-                    <input type="date" name="data_fine" id="data_fine" />
+                    <input type="date" name="data_fine" id="data_fine" value={newViaggio.data_fine} />
                 </div>
                 <div>
-                    <select name="accompagnatori" id="accompagnatori" multiple value={selectedOptions} onChange={handleChange}>
+                    <select name="accompagnatori" id="accompagnatori" multiple value={selectedOptions} onChange={handleChange} >
                         {accompagnatori.map((acc) => (<option key={acc.id} value={acc.id}>{acc.nome}</option>))}
                     </select>
                     <ul>
@@ -67,11 +67,11 @@ const CreateViaggio = () => {
                 </div>
                 <div>
                     <label htmlFor="itinerario">Itinerario:</label>
-                    <input type="text" name="itinerario" id="itinerario" />
+                    <input type="text" name="itinerario" id="itinerario" value={newViaggio.itinerario} />
                 </div>
                 <div>
                     <label htmlFor="image">image:</label>
-                    <input type="file" name="image" id="image" />
+                    <input type="file" name="image" id="image" value={newViaggio.image} />
                 </div>
                 <button type="submit">Invia</button>
             </form>

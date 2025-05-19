@@ -1,4 +1,6 @@
+
 import { useState } from "react";
+
 
 function CustomerCard({ data }) {
 
@@ -11,10 +13,11 @@ function CustomerCard({ data }) {
 
     return (
 
+
         <>
             <div className="user-details">
                 <span>{nome} {cognome}</span>
-                <button className="btn-details" onClick={setShow}>{isShow ? 'Chiudi' : 'Dettagli'}</button>
+                <button className="btn-details" onClick={setShow}>Dettagli</button>
 
             </div>
 

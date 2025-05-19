@@ -114,7 +114,7 @@ const CreateViaggio = () => {
                     <input type="text" name="itinerario" id="itinerario" value={newViaggio.itinerario} onChange={handleChange} />
                 </div>
                 <div>
-                    <label htmlFor="image">Image:</label>
+                    <label htmlFor="image">image:</label>
                     <input type="file" name="image" id="image" value={newViaggio.image} onChange={handleChange} />
                 </div>
                 <button className="btn-details" type="submit">Aggiungi</button>

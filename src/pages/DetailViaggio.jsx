@@ -24,6 +24,35 @@ const DetailViaggio = () => {
         document.getElementById("formPartecipanti").style.display = "block";
     }
 
+    const [newCustomer, setNewCustomer] = useState({
+        id: '',
+        nome: "",
+        cognome: "",
+        email: "",
+        cellulare: "",
+        codice_fiscale: "",
+        data_nascita: "",
+        id_viaggio: id
+    });
+    const handleChange = (e) => {
+        e.preventDefault();
+        let { name, value } = e.target
+        setNewCustomer((newCustomer) => ({
+            ...newCustomer,
+            id: clienti.length + 1,
+            [name]: value
+        }));
+        console.log(newCustomer);
+    };
+
+    function handleSubmit(e) {
+        e.preventDefault();
+        console.log('Nuovo partecipante salvato!');
+        console.log(newCustomer);
+        // clienti.push(newCustomer);
+        console.log(clienti);
+    }
+
     return <div className="details-container">
         <div className="travel-data">
             <div className="travel-title">
@@ -46,7 +75,12 @@ const DetailViaggio = () => {
             </p>
             <button onClick={showForm}>Aggiungi partecipanti</button>
             <div id="formPartecipanti" style={{ display: "none" }}>
-                <div>prova</div>
+                <form action="" onSubmit={handleSubmit}>
+                    <div>
+                        <label htmlFor="nome">Nome:</label>
+                        <input type="text" name="nome" id="nome" value={newCustomer.nome} onChange={handleChange} />
+                    </div>
+                </form>
             </div>
         </div>
 

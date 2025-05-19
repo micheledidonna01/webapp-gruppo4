@@ -68,7 +68,7 @@ const DetailViaggio = () => {
 
                 <input
                     type="text"
-                    placeholder="Cerca passeggero..."
+                    placeholder="Cerca partecipante..."
                     value={searchTerm}
                     onChange={(e) => setSearchTerm(e.target.value)}
                 />

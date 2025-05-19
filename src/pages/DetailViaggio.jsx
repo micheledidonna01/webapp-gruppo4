@@ -94,7 +94,9 @@ const DetailViaggio = () => {
             <ul className="companions-list">
 
                 {companions.map((companions) => (
-                    <li key={companions.id} />
+                    <li key={companions.id} >
+                        <span>{companions}</span>
+                    </li>
                 ))}
             </ul>
 

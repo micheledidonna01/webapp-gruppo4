@@ -8,14 +8,13 @@ const Viaggi = () => {
         v.localita?.toLowerCase().includes(search.toLowerCase())
     );
     return <>
-        <div className="">
-            <Link to="/create">Crea nuovo viaggio</Link>
-        </div>
+
         <section className="travels-container">
+
             <div className="search-travel">
                 <h1>Viaggi:</h1>
 
-                <div>
+                <div className="d-flex">
                     <input
                         type="text"
                         id="search"
@@ -23,6 +22,7 @@ const Viaggi = () => {
                         value={search}
                         onChange={e => setSearch(e.target.value)}
                     />
+                    <Link className="btn-details" to="/create">Crea nuovo viaggio</Link>
                 </div>
             </div>
 

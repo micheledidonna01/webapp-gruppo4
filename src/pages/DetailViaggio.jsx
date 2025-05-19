@@ -76,7 +76,7 @@ const DetailViaggio = () => {
             <p className={clientiViaggio.length >= viaggio.posti_max ? "text-red bg-red" : "text-green bg-green"}>
                 Partecipanti: {clientiViaggio.length} / {viaggio.posti_max}
             </p>
-            <button onClick={showForm}>Aggiungi partecipanti</button>
+            <button onClick={showForm}>Aggiungi partecipante</button>
             <div id="formPartecipanti" style={{ display: "none" }}>
                 <form action="" onSubmit={handleSubmit}>
                     <div>

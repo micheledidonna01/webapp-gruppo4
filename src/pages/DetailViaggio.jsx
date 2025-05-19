@@ -3,6 +3,7 @@ import { useState } from "react";
 import viaggi from "../data/viaggi";
 import clienti from "../data/clienti";
 import CustomerCard from "../components/CustomerCard";
+import { useNavigate } from "react-router-dom";
 
 const DetailViaggio = () => {
     const { id } = useParams();
@@ -14,6 +15,8 @@ const DetailViaggio = () => {
         const fullName = `${cliente.nome} ${cliente.cognome}`.toLowerCase();
         return fullName.includes(searchTerm.toLowerCase());
     });
+
+    let navigate = useNavigate()
 
     if (!viaggio) return <p>Viaggio non trovato.</p>;
 
@@ -47,6 +50,8 @@ const DetailViaggio = () => {
                 <li key={cliente.id}><CustomerCard data={cliente} /></li>
             ))}
         </ul>
+
+        <button onClick={() => navigate(-1)}>prev</button>
 
     </div>;
 };

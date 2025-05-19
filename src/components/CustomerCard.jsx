@@ -1,6 +1,4 @@
-
 import { useState } from "react";
-
 
 function CustomerCard({ data }) {
 
@@ -26,7 +24,7 @@ function CustomerCard({ data }) {
                 <li>Email: {email}</li>
                 <li>Codice Fiscale: {codice_fiscale}</li>
             </ul>}
-
+            
         </>
     )
 }

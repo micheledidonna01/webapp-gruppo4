@@ -10,6 +10,26 @@ img {
   width: 100%;
 }
 
+ul {
+  list-style: none;
+}
+
+.text-green {
+  color: #609c38;
+}
+
+.bg-green {
+  background-color: #c8d5b9;
+}
+
+.text-red {
+  color: #d90429;
+}
+
+.bg-red {
+  background-color: #ee7a76;
+}
+
 header {
   background-color: #edf2f4;
   font-family: "Russo One", sans-serif;
@@ -17,7 +37,7 @@ header {
   font-size: 30px;
   padding: 10px;
   color: #2b2d42;
-  margin-bottom: 15px;
+  margin-bottom: 35px;
 }
 
 header span {
@@ -29,16 +49,20 @@ body {
   background-color: #8d99ae;
 }
 
-h1 {
-  margin-bottom: 15px;
-}
-
 input {
   padding: 5px;
 }
 
 .search-travel {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   margin-bottom: 25px;
+}
+
+.search-travel label {
+  font-size: 14px;
+  margin: 0 5px 0;
 }
 
 .travels-container {
@@ -87,7 +111,88 @@ article div {
   padding: 10px;
   background-color: #ef233c;
   border-radius: 5px;
-  color: white;
+  color: #fff;
+}
+
+.travel-card a:hover {
+  background-color: #b3090f;
+}
+
+.details-container {
+  margin: 0 auto;
+  max-width: 600px;
+}
+
+.user-details {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  background-color: #edf2f4;
+  font-size: 18px;
+}
+
+.users-list {
+  margin-bottom: 35px;
+}
+
+.users-list li {
+  margin-bottom: 10px;
+}
+
+.user-data {
+  background-color: #edf2f4;
+  margin: 0 auto;
+  max-width: 600px;
+  border-radius: 5px;
+  padding: 15px;
+}
+
+.btn-details {
+  all: unset;
+  padding: 8px;
+  background-color: #ef233c;
+  border-radius: 5px;
+  color: #fff;
+  cursor: pointer;
+}
+
+.btn-details:hover {
+  background-color: #ff0054;
+  box-shadow: 0 0 1px 2px #d90429;
+}
+
+.travel-title {
+  margin-bottom: 20px;
+}
+
+.travel-title h3 {
+  margin-bottom: 10px;
+  font-size: 25px;
+}
+
+.travellers-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.travellers-section input {
+  padding: 10px;
+  border: 0 solid transparent;
+  border-radius: 5px;
+}
+
+.travel-data p {
+  display: inline-block;
+  margin-bottom: 15px;
+  font-size: 15px;
+  font-weight: 700;
+  padding: 10px;
+  border-radius: 5px;
 }
 
 .customer-card {

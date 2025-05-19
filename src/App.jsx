@@ -17,9 +17,9 @@ function App() {
               <Route path=":id" element={<DetailViaggio />} />
               <Route path=":id/clienti/:id" element={<ListClienti />} />   
             </Route>
-            <Route path="/clienti">
+            {/* <Route path="/clienti">
               <Route index element={<Clienti />} />         
-            </Route>
+            </Route> */}
           </Route>
         </Routes>
       </BrowserRouter>

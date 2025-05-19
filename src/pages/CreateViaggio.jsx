@@ -20,25 +20,25 @@ const CreateViaggio = () => {
     });
 
     const optionsSelect = accompagnatori.map((acc) => {
-        return {value: acc.id, label: `${acc.nome} ${acc.cognome}`}
-    }); 
+        return { value: acc.id, label: `${acc.nome} ${acc.cognome}` }
+    });
 
 
-    
+
     console.log(optionsSelect);
 
-    const selectedOptions= [];
+    const selectedOptions = [];
     const accompagnatoriSelected = accompagnatori.filter(acc => selectedOptions.includes(acc.id.toString()));
 
     const handleChange = (e) => {
-            e.preventDefault();
-            let { name, value } = e.target
-            console.log(e.target)
-            setNewViaggio((newViaggio) => ({
-                ...newViaggio,
-                id: viaggi.length + 1,
-                [name]: value
-            }))
+        e.preventDefault();
+        let { name, value } = e.target
+        console.log(e.target)
+        setNewViaggio((newViaggio) => ({
+            ...newViaggio,
+            id: viaggi.length + 1,
+            [name]: value
+        }))
     };
 
 
@@ -53,10 +53,27 @@ const CreateViaggio = () => {
 
     function submitHandler(e) {
         e.preventDefault();
-        console.log('Nuovo viaggio salvato!');
+        if (newViaggio.localita === "" || newViaggio.data_inizio === "" || newViaggio.data_fine === "") {
+            alert("Inserire almeno la località e la data di inizio e di fine");
+            return
+        } else if (newViaggio.data_inizio > newViaggio.data_fine) {
+            alert("La data di inizio non può essere superiore alla data di fine");
+            return
+        }
+        alert('Nuovo viaggio salvato!');
         console.log(newViaggio);
         viaggi.push(newViaggio);
         console.log(viaggi);
+        setNewViaggio({
+            id: '',
+            localita: '',
+            data_inizio: '',
+            data_fine: '',
+            accompagnatori: [],
+            itinerario: '',
+            posti_max: 15,
+            image: ''
+        })
     }
 
     return <>
@@ -78,8 +95,8 @@ const CreateViaggio = () => {
                     {/* <select name="accompagnatori" id="accompagnatori" multiple value={selectedOptions} onChange={handleChange} >
                         {accompagnatori.map((acc) => (<option key={acc.id} value={acc.id}>{acc.nome}</option>))}
                     </select> */}
-                    <Select 
-                        options={optionsSelect} 
+                    <Select
+                        options={optionsSelect}
                         isMulti
                         name="accompagnatori"
                         className="basic-multi-select"

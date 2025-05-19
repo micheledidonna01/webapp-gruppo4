@@ -98,7 +98,7 @@ const DetailViaggio = () => {
                     </div>
                     <div>
                         <label htmlFor="data_nascita">Data di nascita:</label>
-                        <input type="text" name="data_nascita" id="data_nascita" value={newCustomer.data_nascita} onChange={handleChange} />
+                        <input type="date" name="data_nascita" id="data_nascita" value={newCustomer.data_nascita} onChange={handleChange} />
                     </div>
                 </form>
             </div>

@@ -1,12 +1,16 @@
 import viaggi from "../data/viaggi";
 import TravelCard from "../components/TravelCard";
 import { useState } from "react";
+import { Link } from "react-router-dom";
 const Viaggi = () => {
     const [search, setSearch] = useState("");
     const viaggiFiltrati = viaggi.filter(v =>
         v.localita?.toLowerCase().includes(search.toLowerCase())
     );
     return <>
+        <div className="">
+            <Link to="/create">Crea nuovo viaggio</Link>
+        </div>
         <section className="travels-container">
             <div className="search-travel">
                 <h1>Viaggi:</h1>

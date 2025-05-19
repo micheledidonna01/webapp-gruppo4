@@ -4,10 +4,7 @@ const viaggi = [
         "localita": "Roma",
         "data_inizio": "2025-06-10",
         "data_fine": "2025-06-15",
-        "accompagnatori": [
-            { "id": 1, "nome": "Luca", "cognome": "Bianchi" },
-            { "id": 2, "nome": "Maria", "cognome": "Rossi" }
-        ],
+        "id_accompagnatori": [1,2],
         "itinerario": "Colosseo, Vaticano, Fontana di Trevi",
         "posti_max": 15,
         "image": 'roma.jpg'
@@ -17,9 +14,7 @@ const viaggi = [
         "localita": "Parigi",
         "data_inizio": "2025-07-01",
         "data_fine": "2025-07-07",
-        "accompagnatori": [
-            { "id": 3, "nome": "Giulia", "cognome": "Verdi" }
-        ],
+        "accompagnatori": [3],
         "itinerario": "Torre Eiffel, Louvre, Montmartre",
         "posti_max": 15,
         "image": 'parigi.jpg'
@@ -29,10 +24,7 @@ const viaggi = [
         "localita": "Barcellona",
         "data_inizio": "2025-08-12",
         "data_fine": "2025-08-18",
-        "accompagnatori": [
-            { "id": 4, "nome": "Marco", "cognome": "Ferrari" },
-            { "id": 5, "nome": "Elena", "cognome": "Gallo" }
-        ],
+        "accompagnatori": [4,5],
         "itinerario": "Sagrada Familia, Parco Güell, Rambla",
         "posti_max": 15,
         "image": 'barcellona.jpg'
@@ -42,9 +34,7 @@ const viaggi = [
         "localita": "Londra",
         "data_inizio": "2025-09-03",
         "data_fine": "2025-09-09",
-        "accompagnatori": [
-            { "id": 6, "nome": "Alessandro", "cognome": "Conti" }
-        ],
+        "accompagnatori": [6],
         "itinerario": "Big Ben, Tower Bridge, British Museum",
         "posti_max": 15,
         "image": 'londra.jpg'
@@ -54,10 +44,7 @@ const viaggi = [
         "localita": "Praga",
         "data_inizio": "2025-10-01",
         "data_fine": "2025-10-06",
-        "accompagnatori": [
-            { "id": 7, "nome": "Chiara", "cognome": "Moretti" },
-            { "id": 8, "nome": "Fabio", "cognome": "Russo" }
-        ],
+        "accompagnatori": [7,8],
         "itinerario": "Castello di Praga, Ponte Carlo, Orologio Astronomico",
         "posti_max": 15,
         "image": 'praga.jpg'
@@ -67,9 +54,7 @@ const viaggi = [
         "localita": "New York",
         "data_inizio": "2025-12-20",
         "data_fine": "2025-12-27",
-        "accompagnatori": [
-            { "id": 9, "nome": "Simona", "cognome": "De Luca" }
-        ],
+        "accompagnatori": [9],
         "itinerario": "Statua della Libertà, Times Square, Central Park",
         "posti_max": 15,
         "image": 'new-york.jpg'

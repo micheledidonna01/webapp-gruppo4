@@ -15,11 +15,7 @@ const CreateViaggio = () => {
     });
 
     const [selectedOptions, setSelectedOptions] = useState([]);
-
-
     const accompagnatoriSelected = accompagnatori.filter(acc => selectedOptions.includes(acc.id.toString()));
-    console.log(accompagnatoriSelected);
-    console.log(selectedOptions);
 
     const handleChange = (e) => {
         const selected = Array.from(e.target.selectedOptions).map((opt) => opt.value);
@@ -33,17 +29,18 @@ const CreateViaggio = () => {
 
     const submitHandler = (e) => {
         e.preventDefault();
-        setNewViaggio({
+        let { name, value } = e.target
+        console.log(e.target)
+        setNewViaggio((newViaggio) => ({
+            ...newViaggio,
             id: viaggi.length + 1,
-            localita: e.target.localita,
-            data_inizio: e.target.data_inizio,
-            data_fine: e.target.data_fine,
-            accompagnatori: selectedOptions,
-            itinerario: e.target.itinerario,
-            posti_max: 15,
-            image: e.target.image
-        })
+            [name]: value
+        }))
+        console.log('Nuovo viaggio salvato!');
+        console.log(newViaggio);
     }
+
+
 
     return <>
         <section>

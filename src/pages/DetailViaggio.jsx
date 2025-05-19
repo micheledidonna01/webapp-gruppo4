@@ -100,6 +100,7 @@ const DetailViaggio = () => {
                         <label htmlFor="data_nascita">Data di nascita:</label>
                         <input type="date" name="data_nascita" id="data_nascita" value={newCustomer.data_nascita} onChange={handleChange} />
                     </div>
+                    <button type="submit">Aggiungi partecipante</button>
                 </form>
             </div>
         </div>

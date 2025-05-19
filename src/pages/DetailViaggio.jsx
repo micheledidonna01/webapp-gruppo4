@@ -33,7 +33,7 @@ const DetailViaggio = () => {
 
                 <input
                     type="text"
-                    placeholder="Cerca per nome o cognome"
+                    placeholder="Cerca utente..."
                     value={searchTerm}
                     onChange={(e) => setSearchTerm(e.target.value)}
                 />
@@ -51,7 +51,7 @@ const DetailViaggio = () => {
             ))}
         </ul>
 
-        <button onClick={() => navigate(-1)}>prev</button>
+        <button className="btn-details" onClick={() => navigate(-1)}>Torna alla Home</button>
 
     </div>;
 };

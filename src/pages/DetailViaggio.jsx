@@ -104,8 +104,8 @@ const DetailViaggio = () => {
                         <input type="date" name="data_nascita" id="data_nascita" value={newCustomer.data_nascita} onChange={handleChange} />
                     </div>
                     <button type="submit">Aggiungi partecipante</button>
-                    <button onClick={hideForm}>Chiudi</button>
                 </form>
+                <button onClick={hideForm}>Chiudi</button>
             </div>
         </div>
 

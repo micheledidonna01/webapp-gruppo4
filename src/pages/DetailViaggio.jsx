@@ -10,7 +10,9 @@ const DetailViaggio = () => {
     const idNum = parseInt(id);
     const [searchTerm, setSearchTerm] = useState("");
     const viaggio = viaggi.find(v => v.id === idNum);
-    const clientiViaggio = clienti.filter(cliente => cliente.id_viaggio === idNum);
+    const [clientiViaggio, setClientiViaggio] = useState(
+        clienti.filter(cliente => cliente.id_viaggio === idNum)
+    );
     const clientiFiltrati = clientiViaggio.filter(cliente => {
         const fullName = `${cliente.nome} ${cliente.cognome}`.toLowerCase();
         return fullName.includes(searchTerm.toLowerCase());
@@ -23,6 +25,9 @@ const DetailViaggio = () => {
     function showForm() {
         document.getElementById("formPartecipanti").style.display = "block";
     }
+    function hideForm() {
+        document.getElementById("formPartecipanti").style.display = "none";
+    }
 
     const [newCustomer, setNewCustomer] = useState({
         id: '',
@@ -32,7 +37,7 @@ const DetailViaggio = () => {
         cellulare: "",
         codice_fiscale: "",
         data_nascita: "",
-        id_viaggio: id
+        id_viaggio: parseInt(id)
     });
     const handleChange = (e) => {
         e.preventDefault();
@@ -42,15 +47,24 @@ const DetailViaggio = () => {
             id: clienti.length + 1,
             [name]: value
         }));
-        console.log(newCustomer);
     };
 
     function handleSubmit(e) {
         e.preventDefault();
-        console.log('Nuovo partecipante salvato!');
-        console.log(newCustomer);
-        // clienti.push(newCustomer);
-        console.log(clienti);
+        const nuovoCliente = { ...newCustomer, id: clienti.length + 1 };
+
+        setClientiViaggio(prev => [...prev, nuovoCliente]);
+
+        setNewCustomer({
+            id: '',
+            nome: "",
+            cognome: "",
+            email: "",
+            cellulare: "",
+            codice_fiscale: "",
+            data_nascita: "",
+            id_viaggio: parseInt(id)
+        });
     }
 
     return <div className="details-container">
@@ -65,7 +79,7 @@ const DetailViaggio = () => {
 
                 <input
                     type="text"
-                    placeholder="Cerca utente..."
+                    placeholder="Cerca partecipante..."
                     value={searchTerm}
                     onChange={(e) => setSearchTerm(e.target.value)}
                 />
@@ -73,14 +87,36 @@ const DetailViaggio = () => {
             <p className={clientiViaggio.length >= viaggio.posti_max ? "text-red bg-red" : "text-green bg-green"}>
                 Partecipanti: {clientiViaggio.length} / {viaggio.posti_max}
             </p>
-            <button onClick={showForm}>Aggiungi partecipanti</button>
+            <button onClick={showForm}>Aggiungi partecipante</button>
             <div id="formPartecipanti" style={{ display: "none" }}>
                 <form action="" onSubmit={handleSubmit}>
                     <div>
                         <label htmlFor="nome">Nome:</label>
                         <input type="text" name="nome" id="nome" value={newCustomer.nome} onChange={handleChange} />
                     </div>
+                    <div>
+                        <label htmlFor="cognome">Cognome:</label>
+                        <input type="text" name="cognome" id="cognome" value={newCustomer.cognome} onChange={handleChange} />
+                    </div>
+                    <div>
+                        <label htmlFor="email">Email:</label>
+                        <input type="text" name="email" id="email" value={newCustomer.email} onChange={handleChange} />
+                    </div>
+                    <div>
+                        <label htmlFor="cellulare">Cellulare:</label>
+                        <input type="text" name="cellulare" id="cellulare" value={newCustomer.cellulare} onChange={handleChange} />
+                    </div>
+                    <div>
+                        <label htmlFor="codice_fiscale">Codice Fiscale:</label>
+                        <input type="text" name="codice_fiscale" id="codice_fiscale" value={newCustomer.codice_fiscale} onChange={handleChange} />
+                    </div>
+                    <div>
+                        <label htmlFor="data_nascita">Data di nascita:</label>
+                        <input type="date" name="data_nascita" id="data_nascita" value={newCustomer.data_nascita} onChange={handleChange} />
+                    </div>
+                    <button type="submit">Aggiungi partecipante</button>
                 </form>
+                <button onClick={hideForm}>Chiudi</button>
             </div>
         </div>
 

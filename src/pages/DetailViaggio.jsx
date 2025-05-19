@@ -23,6 +23,9 @@ const DetailViaggio = () => {
     function showForm() {
         document.getElementById("formPartecipanti").style.display = "block";
     }
+    function hideForm() {
+        document.getElementById("formPartecipanti").style.display = "none";
+    }
 
     const [newCustomer, setNewCustomer] = useState({
         id: '',
@@ -101,6 +104,7 @@ const DetailViaggio = () => {
                         <input type="date" name="data_nascita" id="data_nascita" value={newCustomer.data_nascita} onChange={handleChange} />
                     </div>
                     <button type="submit">Aggiungi partecipante</button>
+                    <button onClick={hideForm}>Chiudi</button>
                 </form>
             </div>
         </div>

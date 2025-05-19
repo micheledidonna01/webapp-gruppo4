@@ -81,15 +81,15 @@ const CreateViaggio = () => {
             <form className="form-container" action="" onSubmit={submitHandler}>
                 <div>
                     <label className="mr-5" htmlFor="localita">Località:</label>
-                    <input type="text" name="localita" id="localita" value={newViaggio.localita} onChange={handleChange} />
+                    <input type="text" name="localita" id="localita" value={newViaggio.localita} onChange={handleChange} required />
                 </div>
                 <div>
                     <label className="mr-5" htmlFor="data_inizio">Data di inizio:</label>
-                    <input type="date" name="data_inizio" id="data_inizio" value={newViaggio.data_inizio} onChange={handleChange} />
+                    <input type="date" name="data_inizio" id="data_inizio" value={newViaggio.data_inizio} onChange={handleChange} required />
                 </div>
                 <div>
                     <label className="mr-5" htmlFor="data_fine">Data di fine:</label>
-                    <input type="date" name="data_fine" id="data_fine" value={newViaggio.data_fine} onChange={handleChange} />
+                    <input type="date" name="data_fine" id="data_fine" value={newViaggio.data_fine} onChange={handleChange} required />
                 </div>
                 <div>
                     {/* <select name="accompagnatori" id="accompagnatori" multiple value={selectedOptions} onChange={handleChange} >
@@ -111,11 +111,11 @@ const CreateViaggio = () => {
                 </div>
                 <div>
                     <label className="mr-5" htmlFor="itinerario">Itinerario:</label>
-                    <input type="text" name="itinerario" id="itinerario" value={newViaggio.itinerario} onChange={handleChange} />
+                    <input type="text" name="itinerario" id="itinerario" value={newViaggio.itinerario} onChange={handleChange} required />
                 </div>
                 <div>
                     <label htmlFor="image">image:</label>
-                    <input type="file" name="image" id="image" value={newViaggio.image} onChange={handleChange} />
+                    <input type="file" name="image" id="image" value={newViaggio.image} onChange={handleChange} required />
                 </div>
                 <button className="btn-details" type="submit">Aggiungi</button>
             </form>

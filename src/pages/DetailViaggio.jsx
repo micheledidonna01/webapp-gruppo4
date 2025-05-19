@@ -33,12 +33,18 @@ const DetailViaggio = () => {
 
     if (!viaggio) return <p>Viaggio non trovato.</p>;
 
-    function showForm() {
-        document.getElementById("formPartecipanti").style.display = "block";
+    const [isShow, setIsShow] = useState(false);
+
+    function setShow() {
+        setIsShow(!isShow);
     }
-    function hideForm() {
-        document.getElementById("formPartecipanti").style.display = "none";
-    }
+
+    // function showForm() {
+    //     document.getElementById("formPartecipanti").style.display = "block";
+    // }
+    // function hideForm() {
+    //     document.getElementById("formPartecipanti").style.display = "none";
+    // }
 
     const [newCustomer, setNewCustomer] = useState({
         id: '',
@@ -89,16 +95,18 @@ const DetailViaggio = () => {
                 <span>Dal <strong>{viaggio.data_inizio}</strong> al <strong>{viaggio.data_fine}</strong></span>
             </div>
 
-            <h3>Accompagnatori:</h3>
+            <section className="d-flex align-center">
+                <h3>Accompagnatori:</h3>
 
-            <ul className="companions-list">
+                <ul className="companions-list d-flex">
 
-                {companions.map((companions) => (
-                    <li key={companions.id} >
-                        <span>{companions}</span>
-                    </li>
-                ))}
-            </ul>
+                    {companions.map((companions) => (
+                        <li key={companions.id} >
+                            <span>{companions}</span>
+                        </li>
+                    ))}
+                </ul>
+            </section>
 
             <div className="travellers-section">
                 <h3>Viaggiatori:</h3>
@@ -110,11 +118,13 @@ const DetailViaggio = () => {
                     onChange={(e) => setSearchTerm(e.target.value)}
                 />
             </div>
-            <p className={clientiViaggio.length >= viaggio.posti_max ? "text-red bg-red" : "text-green bg-green"} >
+            <p className={clientiViaggio.length >= viaggio.posti_max ? "text-red bg-red mr-5" : "text-green bg-green mr-5"} >
                 Partecipanti: {clientiViaggio.length} / {viaggio.posti_max}
             </p>
-            <button onClick={showForm}>Aggiungi partecipante</button>
-            <div id="formPartecipanti" style={{ display: "none" }}>
+            <button className="btn-details" onClick={setShow}>{isShow ? 'Chiudi' : 'Aggiungi partecipante'}</button>
+
+            {isShow && <div id="formPartecipanti">
+
                 <form className="form-container" action="" onSubmit={handleSubmit}>
                     <div>
                         <label className="mr-5" htmlFor="nome">Nome:</label>
@@ -140,10 +150,10 @@ const DetailViaggio = () => {
                         <label className="mr-5" htmlFor="data_nascita">Data di nascita:</label>
                         <input type="date" name="data_nascita" id="data_nascita" value={newCustomer.data_nascita} onChange={handleChange} required />
                     </div>
-                    <button className="btn-details" type="submit">Aggiungi partecipante</button>
+                    <button className="btn-details" type="submit">Aggiungi</button>
                 </form>
-                <button className="btn-details" onClick={hideForm}>Chiudi</button>
-            </div>
+                {/* <button className="btn-details" onClick={hideForm}>Chiudi</button> */}
+            </div>}
         </div>
 
         <ul className="users-list">

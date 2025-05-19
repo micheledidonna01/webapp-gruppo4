@@ -68,6 +68,10 @@ input {
   gap: 5px;
 }
 
+.align-center {
+  align-items: center;
+}
+
 .mr-5 {
   margin-right: 10px;
 }

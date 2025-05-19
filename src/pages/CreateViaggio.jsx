@@ -1,7 +1,11 @@
 import accompagnatori from "../data/accompagnatori";
 import { useState } from "react";
 import viaggi from "../data/viaggi";
+import { useNavigate } from "react-router-dom";
+
 const CreateViaggio = () => {
+
+    let navigate = useNavigate()
 
     const [newViaggio, setNewViaggio] = useState({
         id: '',
@@ -18,44 +22,49 @@ const CreateViaggio = () => {
     const accompagnatoriSelected = accompagnatori.filter(acc => selectedOptions.includes(acc.id.toString()));
 
     const handleChange = (e) => {
-        const selected = Array.from(e.target.selectedOptions).map((opt) => opt.value);
+        if (e.target.name === 'accompagnatori') {
+            const selected = Array.from(e.target.selectedOptions).map((opt) => opt.value);
 
-        if (selected.length <= 2) {
-            setSelectedOptions(selected);
+            if (selected.length <= 2) {
+                setSelectedOptions(selected);
+            } else {
+                e.target.selectedOptions[2].selected = false;
+            }
         } else {
-            e.target.selectedOptions[2].selected = false;
+            e.preventDefault();
+            let { name, value } = e.target
+            console.log(e.target)
+            setNewViaggio((newViaggio) => ({
+                ...newViaggio,
+                id: viaggi.length + 1,
+                [name]: value
+            }))
+
         }
     };
 
-    const submitHandler = (e) => {
+    function submitHandler(e) {
         e.preventDefault();
-        let { name, value } = e.target
-        console.log(e.target)
-        setNewViaggio((newViaggio) => ({
-            ...newViaggio,
-            id: viaggi.length + 1,
-            [name]: value
-        }))
         console.log('Nuovo viaggio salvato!');
         console.log(newViaggio);
+        viaggi.push(newViaggio);
+        console.log(viaggi);
     }
-
-
 
     return <>
         <section>
             <form action="" onSubmit={submitHandler}>
                 <div>
                     <label htmlFor="localita">Localita:</label>
-                    <input type="text" name="localita" id="localita" value={newViaggio.localita} />
+                    <input type="text" name="localita" id="localita" value={newViaggio.localita} onChange={handleChange} />
                 </div>
                 <div>
                     <label htmlFor="data_inizio">Data inizio:</label>
-                    <input type="date" name="data_inizio" id="data_inizio" value={newViaggio.data_inizio} />
+                    <input type="date" name="data_inizio" id="data_inizio" value={newViaggio.data_inizio} onChange={handleChange} />
                 </div>
                 <div>
                     <label htmlFor="data_fine">Data fine:</label>
-                    <input type="date" name="data_fine" id="data_fine" value={newViaggio.data_fine} />
+                    <input type="date" name="data_fine" id="data_fine" value={newViaggio.data_fine} onChange={handleChange} />
                 </div>
                 <div>
                     <select name="accompagnatori" id="accompagnatori" multiple value={selectedOptions} onChange={handleChange} >
@@ -67,15 +76,16 @@ const CreateViaggio = () => {
                 </div>
                 <div>
                     <label htmlFor="itinerario">Itinerario:</label>
-                    <input type="text" name="itinerario" id="itinerario" value={newViaggio.itinerario} />
+                    <input type="text" name="itinerario" id="itinerario" value={newViaggio.itinerario} onChange={handleChange} />
                 </div>
                 <div>
                     <label htmlFor="image">image:</label>
-                    <input type="file" name="image" id="image" value={newViaggio.image} />
+                    <input type="file" name="image" id="image" value={newViaggio.image} onChange={handleChange} />
                 </div>
                 <button type="submit">Invia</button>
             </form>
         </section>
+        <button onClick={() => navigate(-1)}>prev</button>
     </>
 }
 

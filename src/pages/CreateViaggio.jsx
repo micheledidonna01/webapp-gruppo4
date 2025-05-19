@@ -20,25 +20,25 @@ const CreateViaggio = () => {
     });
 
     const optionsSelect = accompagnatori.map((acc) => {
-        return {value: acc.id, label: `${acc.nome} ${acc.cognome}`}
-    }); 
+        return { value: acc.id, label: `${acc.nome} ${acc.cognome}` }
+    });
 
 
-    
+
     console.log(optionsSelect);
 
-    const selectedOptions= [];
+    const selectedOptions = [];
     const accompagnatoriSelected = accompagnatori.filter(acc => selectedOptions.includes(acc.id.toString()));
 
     const handleChange = (e) => {
-            e.preventDefault();
-            let { name, value } = e.target
-            console.log(e.target)
-            setNewViaggio((newViaggio) => ({
-                ...newViaggio,
-                id: viaggi.length + 1,
-                [name]: value
-            }))
+        e.preventDefault();
+        let { name, value } = e.target
+        console.log(e.target)
+        setNewViaggio((newViaggio) => ({
+            ...newViaggio,
+            id: viaggi.length + 1,
+            [name]: value
+        }))
     };
 
 
@@ -63,23 +63,25 @@ const CreateViaggio = () => {
         <section className="details-container">
             <form className="form-container" action="" onSubmit={submitHandler}>
                 <div>
-                    <label htmlFor="localita">Località:</label>
+                    <label className="mr-5" htmlFor="localita">Località:</label>
                     <input type="text" name="localita" id="localita" value={newViaggio.localita} onChange={handleChange} />
                 </div>
                 <div>
-                    <label htmlFor="data_inizio">Data di inizio:</label>
+                    <label className="mr-5" htmlFor="data_inizio">Data di inizio:</label>
                     <input type="date" name="data_inizio" id="data_inizio" value={newViaggio.data_inizio} onChange={handleChange} />
                 </div>
                 <div>
-                    <label htmlFor="data_fine">Data di fine:</label>
+                    <label className="mr-5" htmlFor="data_fine">Data di fine:</label>
                     <input type="date" name="data_fine" id="data_fine" value={newViaggio.data_fine} onChange={handleChange} />
                 </div>
                 <div>
                     {/* <select name="accompagnatori" id="accompagnatori" multiple value={selectedOptions} onChange={handleChange} >
                         {accompagnatori.map((acc) => (<option key={acc.id} value={acc.id}>{acc.nome}</option>))}
                     </select> */}
-                    <Select 
-                        options={optionsSelect} 
+
+                    < label htmlFor="accompagnatori">Seleziona accompagnatori:</label>
+                    <Select
+                        options={optionsSelect}
                         isMulti
                         name="accompagnatori"
                         className="basic-multi-select"
@@ -93,14 +95,14 @@ const CreateViaggio = () => {
                     </ul>
                 </div>
                 <div>
-                    <label htmlFor="itinerario">Itinerario:</label>
+                    <label className="mr-5" htmlFor="itinerario">Itinerario:</label>
                     <input type="text" name="itinerario" id="itinerario" value={newViaggio.itinerario} onChange={handleChange} />
                 </div>
                 <div>
-                    <label htmlFor="image">image:</label>
+                    <label htmlFor="image">Image:</label>
                     <input type="file" name="image" id="image" value={newViaggio.image} onChange={handleChange} />
                 </div>
-                <button type="submit">Invia</button>
+                <button className="btn-details" type="submit">Aggiungi</button>
             </form>
             <button className="btn-details" onClick={() => navigate(-1)}>Torna alla Home</button>
         </section>

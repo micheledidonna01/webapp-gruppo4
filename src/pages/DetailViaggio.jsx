@@ -18,32 +18,37 @@ const DetailViaggio = () => {
     if (!viaggio) return <p>Viaggio non trovato.</p>;
 
 
-    return <>
-        <div>
-            <h3>{viaggio.localita}</h3>
-            <span>Dal <strong>{viaggio.data_inizio}</strong> al <strong>{viaggio.data_fine}</strong></span>
+    return <div className="details-container">
+        <div className="travel-data">
+            <div className="travel-title">
+                <h3>{viaggio.localita}</h3>
+                <span>Dal <strong>{viaggio.data_inizio}</strong> al <strong>{viaggio.data_fine}</strong></span>
+            </div>
+
+            <div className="travellers-section">
+                <h3>Viaggiatori:</h3>
+
+                <input
+                    type="text"
+                    placeholder="Cerca per nome o cognome"
+                    value={searchTerm}
+                    onChange={(e) => setSearchTerm(e.target.value)}
+                />
+            </div>
+            <p className={clientiViaggio.length >= viaggio.posti_max ? "text-red bg-red" : "text-green bg-green"}>
+                Partecipanti: {clientiViaggio.length} / {viaggio.posti_max}
+            </p>
         </div>
 
-        <h3>Viaggiatori:</h3>
-        <p style={{ color: clientiViaggio.length >= viaggio.posti_max ? "red" : "green" }}>
-            Partecipanti: {clientiViaggio.length} / {viaggio.posti_max}
-        </p>
 
-        <input
-            type="text"
-            placeholder="Cerca per nome o cognome"
-            value={searchTerm}
-            onChange={(e) => setSearchTerm(e.target.value)}
-        />
-
-        <ul className="partecipanti">
+        <ul className="users-list">
 
             {clientiFiltrati.map((cliente) => (
                 <li key={cliente.id}><CustomerCard data={cliente} /></li>
             ))}
         </ul>
 
-    </>;
+    </div>;
 };
 
 

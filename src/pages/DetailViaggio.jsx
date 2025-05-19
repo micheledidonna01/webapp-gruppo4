@@ -4,6 +4,7 @@ import viaggi from "../data/viaggi";
 import clienti from "../data/clienti";
 import CustomerCard from "../components/CustomerCard";
 import { useNavigate } from "react-router-dom";
+import accompagnatori from "../data/accompagnatori";
 
 const DetailViaggio = () => {
     const { id } = useParams();
@@ -17,6 +18,16 @@ const DetailViaggio = () => {
         const fullName = `${cliente.nome} ${cliente.cognome}`.toLowerCase();
         return fullName.includes(searchTerm.toLowerCase());
     });
+
+    const companions = [];
+    for (let i = 0; i < viaggio.accompagnatori.length; i++) {
+        for (let c = 0; c < accompagnatori.length; c++) {
+            if (viaggio.accompagnatori[i] === accompagnatori[c].id) {
+                companions.push(`${accompagnatori[c].nome} ${accompagnatori[c].cognome}`)
+            }
+        }
+    }
+    console.log(companions);
 
     let navigate = useNavigate()
 
@@ -37,7 +48,7 @@ const DetailViaggio = () => {
         cellulare: "",
         codice_fiscale: "",
         data_nascita: "",
-        id_viaggio: parseInt(id)
+        id_viaggio: idNum
     });
     const handleChange = (e) => {
         e.preventDefault();
@@ -66,7 +77,7 @@ const DetailViaggio = () => {
                 cellulare: "",
                 codice_fiscale: "",
                 data_nascita: "",
-                id_viaggio: parseInt(id)
+                id_viaggio: idNum
             });
         }
     }
@@ -77,6 +88,17 @@ const DetailViaggio = () => {
                 <h3>{viaggio.localita}</h3>
                 <span>Dal <strong>{viaggio.data_inizio}</strong> al <strong>{viaggio.data_fine}</strong></span>
             </div>
+
+            <h3>Accompagnatori:</h3>
+
+            <ul className="companions-list">
+
+                {companions.map((companions) => (
+                    <li key={companions.id} >
+                        <span>{companions}</span>
+                    </li>
+                ))}
+            </ul>
 
             <div className="travellers-section">
                 <h3>Viaggiatori:</h3>
@@ -123,7 +145,6 @@ const DetailViaggio = () => {
                 <button className="btn-details" onClick={hideForm}>Chiudi</button>
             </div>
         </div>
-
 
         <ul className="users-list">
 

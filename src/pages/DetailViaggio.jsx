@@ -49,7 +49,7 @@ const DetailViaggio = () => {
         e.preventDefault();
         console.log('Nuovo partecipante salvato!');
         console.log(newCustomer);
-        // clienti.push(newCustomer);
+        clienti.push(newCustomer);
         console.log(clienti);
     }
 

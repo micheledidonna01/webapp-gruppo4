@@ -20,6 +20,9 @@ const DetailViaggio = () => {
 
     if (!viaggio) return <p>Viaggio non trovato.</p>;
 
+    function showForm() {
+        document.getElementById("formPartecipanti").style.display = "block";
+    }
 
     return <div className="details-container">
         <div className="travel-data">
@@ -41,6 +44,10 @@ const DetailViaggio = () => {
             <p className={clientiViaggio.length >= viaggio.posti_max ? "text-red bg-red" : "text-green bg-green"}>
                 Partecipanti: {clientiViaggio.length} / {viaggio.posti_max}
             </p>
+            <button onClick={showForm}>Aggiungi partecipanti</button>
+            <div id="formPartecipanti" style={{ display: "none" }}>
+                <div>prova</div>
+            </div>
         </div>
 
 

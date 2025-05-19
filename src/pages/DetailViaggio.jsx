@@ -10,7 +10,9 @@ const DetailViaggio = () => {
     const idNum = parseInt(id);
     const [searchTerm, setSearchTerm] = useState("");
     const viaggio = viaggi.find(v => v.id === idNum);
-    const clientiViaggio = clienti.filter(cliente => cliente.id_viaggio === idNum);
+    const [clientiViaggio, setClientiViaggio] = useState(
+        clienti.filter(cliente => cliente.id_viaggio === idNum)
+    );
     const clientiFiltrati = clientiViaggio.filter(cliente => {
         const fullName = `${cliente.nome} ${cliente.cognome}`.toLowerCase();
         return fullName.includes(searchTerm.toLowerCase());
@@ -45,15 +47,24 @@ const DetailViaggio = () => {
             id: clienti.length + 1,
             [name]: value
         }));
-        console.log(newCustomer);
     };
 
     function handleSubmit(e) {
         e.preventDefault();
-        console.log('Nuovo partecipante salvato!');
-        console.log(newCustomer);
-        clienti.push(newCustomer);
-        console.log(clienti);
+        const nuovoCliente = { ...newCustomer, id: clienti.length + 1 };
+
+        setClientiViaggio(prev => [...prev, nuovoCliente]);
+
+        setNewCustomer({
+            id: '',
+            nome: "",
+            cognome: "",
+            email: "",
+            cellulare: "",
+            codice_fiscale: "",
+            data_nascita: "",
+            id_viaggio: parseInt(id)
+        });
     }
 
     return <div className="details-container">

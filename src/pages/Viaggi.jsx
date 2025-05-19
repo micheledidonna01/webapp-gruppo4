@@ -12,10 +12,10 @@ const Viaggi = () => {
                 <h1>Viaggi:</h1>
 
                 <div>
-                    <label htmlFor="search">Cerca viaggi:</label>
                     <input
                         type="text"
                         id="search"
+                        placeholder="Cerca viaggi..."
                         value={search}
                         onChange={e => setSearch(e.target.value)}
                     />

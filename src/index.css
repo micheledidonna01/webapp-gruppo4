@@ -1,9 +1,13 @@
+/* Reset  */
+
 * {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
 
 }
+
+/* Common */
 
 img {
   display: block;
@@ -13,6 +17,31 @@ img {
 ul {
   list-style: none;
 }
+
+header {
+  background-color: #edf2f4;
+  font-family: "Russo One", sans-serif;
+  text-align: center;
+  font-size: 30px;
+  padding: 10px;
+  color: #2b2d42;
+  margin-bottom: 35px;
+}
+
+
+body {
+  font-family: "Roboto", sans-serif;
+  background-color: #8d99ae;
+}
+
+input {
+  padding: 10px;
+  border: 0 solid transparent;
+  border-radius: 5px;
+}
+
+
+/* Utility classes */
 
 .text-green {
   color: #609c38;
@@ -30,27 +59,16 @@ ul {
   background-color: #ee7a76;
 }
 
-header {
-  background-color: #edf2f4;
-  font-family: "Russo One", sans-serif;
-  text-align: center;
-  font-size: 30px;
-  padding: 10px;
-  color: #2b2d42;
-  margin-bottom: 35px;
-}
+/* Header  */
 
 header span {
   color: #ef233c;
 }
 
-body {
-  font-family: "Roboto", sans-serif;
-  background-color: #8d99ae;
-}
-
-input {
-  padding: 5px;
+/* main  */
+.travels-container {
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 .search-travel {
@@ -65,12 +83,7 @@ input {
   margin: 0 5px 0;
 }
 
-.travels-container {
-
-  max-width: 1200px;
-  margin: 0 auto;
-
-}
+/* Cards style */
 
 .card-container {
   display: grid;
@@ -118,6 +131,8 @@ article div {
   background-color: #b3090f;
 }
 
+/* Deatils page */
+
 .details-container {
   margin: 0 auto;
   max-width: 600px;
@@ -160,8 +175,7 @@ article div {
 }
 
 .btn-details:hover {
-  background-color: #ff0054;
-  box-shadow: 0 0 1px 2px #d90429;
+  background-color: #b3090f;
 }
 
 .travel-title {
@@ -180,12 +194,6 @@ article div {
   margin-bottom: 10px;
 }
 
-.travellers-section input {
-  padding: 10px;
-  border: 0 solid transparent;
-  border-radius: 5px;
-}
-
 .travel-data p {
   display: inline-block;
   margin-bottom: 15px;
@@ -194,39 +202,6 @@ article div {
   padding: 10px;
   border-radius: 5px;
 }
-
-.customer-card {
-  max-width: 600px;
-  margin: 30px auto;
-  border: 1px solid #ccc;
-  padding: 15px;
-  border-radius: 8px;
-}
-
-.customer-row {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-ul {
-  list-style-type: none;
-}
-
-.customer-details-btn {
-  padding: 6px 12px;
-  background-color: #007bff;
-  color: white;
-  border: none;
-  border-radius: 8px;
-  cursor: pointer;
-}
-
-.customer-details-btn:hover {
-  background-color: #0056b3;
-}
-
-
 
 
 @media screen and (max-width: 768px) {

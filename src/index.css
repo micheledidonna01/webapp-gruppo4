@@ -212,6 +212,20 @@ article div {
   border-radius: 5px;
 }
 
+/* form viaggi */
+
+.form-container {
+  margin-bottom: 20px;
+  border: 1px solid black;
+  border-radius: 5px;
+  background-color: #EDF2F4;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: flex-start;
+}
+
 
 @media screen and (max-width: 768px) {
 

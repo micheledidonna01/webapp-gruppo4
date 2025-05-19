@@ -52,18 +52,18 @@ const CreateViaggio = () => {
     }
 
     return <>
-        <section>
-            <form action="" onSubmit={submitHandler}>
+        <section className="details-container">
+            <form className="form-container" action="" onSubmit={submitHandler}>
                 <div>
-                    <label htmlFor="localita">Localita:</label>
+                    <label htmlFor="localita">Località:</label>
                     <input type="text" name="localita" id="localita" value={newViaggio.localita} onChange={handleChange} />
                 </div>
                 <div>
-                    <label htmlFor="data_inizio">Data inizio:</label>
+                    <label htmlFor="data_inizio">Data di inizio:</label>
                     <input type="date" name="data_inizio" id="data_inizio" value={newViaggio.data_inizio} onChange={handleChange} />
                 </div>
                 <div>
-                    <label htmlFor="data_fine">Data fine:</label>
+                    <label htmlFor="data_fine">Data di fine:</label>
                     <input type="date" name="data_fine" id="data_fine" value={newViaggio.data_fine} onChange={handleChange} />
                 </div>
                 <div>
@@ -84,8 +84,9 @@ const CreateViaggio = () => {
                 </div>
                 <button type="submit">Invia</button>
             </form>
+            <button className="btn-details" onClick={() => navigate(-1)}>Torna alla Home</button>
         </section>
-        <button onClick={() => navigate(-1)}>prev</button>
+
     </>
 }
 

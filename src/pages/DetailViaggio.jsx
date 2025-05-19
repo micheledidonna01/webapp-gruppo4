@@ -96,27 +96,27 @@ const DetailViaggio = () => {
                 <form action="" onSubmit={handleSubmit}>
                     <div>
                         <label htmlFor="nome">Nome:</label>
-                        <input type="text" name="nome" id="nome" value={newCustomer.nome} onChange={handleChange} />
+                        <input type="text" name="nome" id="nome" value={newCustomer.nome} onChange={handleChange} required/>
                     </div>
                     <div>
                         <label htmlFor="cognome">Cognome:</label>
-                        <input type="text" name="cognome" id="cognome" value={newCustomer.cognome} onChange={handleChange} />
+                        <input type="text" name="cognome" id="cognome" value={newCustomer.cognome} onChange={handleChange} required />
                     </div>
                     <div>
                         <label htmlFor="email">Email:</label>
-                        <input type="text" name="email" id="email" value={newCustomer.email} onChange={handleChange} />
+                        <input type="text" name="email" id="email" value={newCustomer.email} onChange={handleChange} required />
                     </div>
                     <div>
                         <label htmlFor="cellulare">Cellulare:</label>
-                        <input type="text" name="cellulare" id="cellulare" value={newCustomer.cellulare} onChange={handleChange} />
+                        <input type="text" name="cellulare" id="cellulare" value={newCustomer.cellulare} onChange={handleChange} required />
                     </div>
                     <div>
                         <label htmlFor="codice_fiscale">Codice Fiscale:</label>
-                        <input type="text" name="codice_fiscale" id="codice_fiscale" value={newCustomer.codice_fiscale} onChange={handleChange} />
+                        <input type="text" name="codice_fiscale" id="codice_fiscale" value={newCustomer.codice_fiscale} onChange={handleChange} required />
                     </div>
                     <div>
                         <label htmlFor="data_nascita">Data di nascita:</label>
-                        <input type="date" name="data_nascita" id="data_nascita" value={newCustomer.data_nascita} onChange={handleChange} />
+                        <input type="date" name="data_nascita" id="data_nascita" value={newCustomer.data_nascita} onChange={handleChange} required />
                     </div>
                     <button type="submit">Aggiungi partecipante</button>
                 </form>

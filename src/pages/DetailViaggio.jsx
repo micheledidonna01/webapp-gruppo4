@@ -121,7 +121,7 @@ const DetailViaggio = () => {
             <p className={clientiViaggio.length >= viaggio.posti_max ? "text-red bg-red mr-5" : "text-green bg-green mr-5"} >
                 Partecipanti: {clientiViaggio.length} / {viaggio.posti_max}
             </p>
-            <button className="btn-details" onClick={setShow}>{isShow ? 'Chiudi' : 'Aggiungi partecipante'}</button>
+            <button className="btn-details" disabled={clientiViaggio.length >= viaggio.posti_max} onClick={setShow}>{isShow ? 'Chiudi' : 'Aggiungi partecipante'}</button>
 
             {isShow && <div id="formPartecipanti">
 
@@ -150,7 +150,7 @@ const DetailViaggio = () => {
                         <label className="mr-5" htmlFor="data_nascita">Data di nascita:</label>
                         <input type="date" name="data_nascita" id="data_nascita" value={newCustomer.data_nascita} onChange={handleChange} required />
                     </div>
-                    <button className="btn-details" type="submit">Aggiungi</button>
+                    <button className="btn-details" type="submit" >Aggiungi</button>
                 </form>
                 {/* <button className="btn-details" onClick={hideForm}>Chiudi</button> */}
             </div>}

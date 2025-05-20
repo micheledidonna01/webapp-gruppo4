@@ -45,7 +45,7 @@ const DetailViaggio = () => {
     // function hideForm() {
     //     document.getElementById("formPartecipanti").style.display = "none";
     // }
-    let accompagnatoriViaggio = accompagnatori.filter((acc) => acc.id === idNum);
+    let accompagnatoriViaggio = accompagnatori.filter((acc) => viaggio.accompagnatori.includes(acc.id));
     const [newCustomer, setNewCustomer] = useState({
         id: '',
         nome: "",

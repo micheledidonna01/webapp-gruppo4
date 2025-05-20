@@ -191,12 +191,6 @@ article div {
   cursor: pointer;
 }
 
-.btn-details:disabled {
-  background-color: #b3090f;
-  color: #2b2d42;
-  cursor: not-allowed;
-}
-
 .btn-details:hover {
   background-color: #b3090f;
 }

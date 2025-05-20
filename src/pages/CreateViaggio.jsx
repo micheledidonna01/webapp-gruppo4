@@ -33,7 +33,7 @@ const CreateViaggio = () => {
     const handleChange = (e) => {
         e.preventDefault();
         let { name, value } = e.target
-        console.log(e.target)
+        
         setNewViaggio((newViaggio) => ({
             ...newViaggio,
             id: viaggi.length + 1,
@@ -61,9 +61,12 @@ const CreateViaggio = () => {
             return
         }
         alert('Nuovo viaggio salvato!');
+
         console.log(newViaggio);
-        viaggi.push(newViaggio);
         console.log(viaggi);
+
+        viaggi.push(newViaggio);
+
         setNewViaggio({
             id: '',
             localita: '',
@@ -106,7 +109,7 @@ const CreateViaggio = () => {
                         value={newViaggio.accompagnatori}
                     />
                     <ul>
-                        {accompagnatoriSelected.map(acc => (<li key={acc.id}>{acc.nome} {acc.cognome}</li>))}
+                        {accompagnatoriSelected.map(acc => (<li key={acc.value}>{acc.label}</li>))}
                     </ul>
                 </div>
                 <div>

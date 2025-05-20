@@ -45,7 +45,7 @@ const DetailViaggio = () => {
     // function hideForm() {
     //     document.getElementById("formPartecipanti").style.display = "none";
     // }
-
+    let accompagnatoriViaggio = accompagnatori.filter((acc) => acc.id === idNum);
     const [newCustomer, setNewCustomer] = useState({
         id: '',
         nome: "",
@@ -56,6 +56,7 @@ const DetailViaggio = () => {
         data_nascita: "",
         id_viaggio: idNum
     });
+
     const handleChange = (e) => {
         e.preventDefault();
         let { name, value } = e.target
@@ -100,9 +101,9 @@ const DetailViaggio = () => {
 
                 <ul className="companions-list d-flex">
 
-                    {companions.map((companions) => (
+                    {accompagnatoriViaggio.map((companions) => (
                         <li key={companions.id} >
-                            <span>{companions}</span>
+                            <span>{companions.nome} {companions.cognome}  </span>
                         </li>
                     ))}
                 </ul>

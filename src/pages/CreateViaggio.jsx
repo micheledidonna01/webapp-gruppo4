@@ -94,10 +94,11 @@ const CreateViaggio = () => {
                     <label className="mr-5" htmlFor="data_fine">Data di fine:</label>
                     <input type="date" name="data_fine" id="data_fine" value={newViaggio.data_fine} onChange={handleChange} required />
                 </div>
-                <div>
+                <div className="d-flex">
                     {/* <select name="accompagnatori" id="accompagnatori" multiple value={selectedOptions} onChange={handleChange} >
                         {accompagnatori.map((acc) => (<option key={acc.id} value={acc.id}>{acc.nome}</option>))}
                     </select> */}
+                    <label htmlFor="accompagnatori" className="mr-5">Accompagnatori: </label>
                     <Select
                         options={optionsSelect}
                         isMulti
@@ -107,6 +108,7 @@ const CreateViaggio = () => {
                         closeMenuOnSelect={false}
                         onChange={handleSelectChange}
                         value={newViaggio.accompagnatori}
+                        id="accompagnatori"
                     />
                     <ul>
                         {accompagnatoriSelected.map(acc => (<li key={acc.value}>{acc.label}</li>))}

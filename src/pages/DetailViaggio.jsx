@@ -119,10 +119,12 @@ const DetailViaggio = () => {
                     onChange={(e) => setSearchTerm(e.target.value)}
                 />
             </div>
+
             <p className={clientiViaggio.length >= viaggio.posti_max ? "text-red bg-red mr-5" : "text-green bg-green mr-5"} >
                 Partecipanti: {clientiViaggio.length} / {viaggio.posti_max}
             </p>
-            <button className="btn-details" disabled={clientiViaggio.length >= viaggio.posti_max} onClick={setShow}>{isShow ? 'Chiudi' : 'Aggiungi partecipante'}</button>
+
+            {clientiViaggio.length >= viaggio.posti_max ? (<strong>Numero massimo di partecipanti raggiunto!</strong>) : (<button className="btn-details" onClick={setShow}>{isShow ? 'Chiudi' : 'Aggiungi partecipante'}</button>)}
 
             {isShow && <div id="formPartecipanti">
 
